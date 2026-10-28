@@ -1,0 +1,118 @@
+{
+  "captures": [
+    {
+      "scenario": "clean",
+      "expected": 10,
+      "recovered": 10,
+      "correct": 10,
+      "rejected_candidates": 0,
+      "lost_bytes": 0,
+      "first_frame_offset": 0,
+      "bytes_scanned": 124,
+      "recovery": 1.0,
+      "loss": 0.0
+    },
+    {
+      "scenario": "line noise",
+      "expected": 10,
+      "recovered": 8,
+      "correct": 8,
+      "rejected_candidates": 2,
+      "lost_bytes": 25,
+      "first_frame_offset": 0,
+      "bytes_scanned": 124,
+      "recovery": 0.8,
+      "loss": 0.2016
+    },
+    {
+      "scenario": "dropped bytes",
+      "expected": 10,
+      "recovered": 9,
+      "correct": 9,
+      "rejected_candidates": 1,
+      "lost_bytes": 12,
+      "first_frame_offset": 0,
+      "bytes_scanned": 121,
+      "recovery": 0.9,
+      "loss": 0.0992
+    },
+    {
+      "scenario": "stuck flag",
+      "expected": 10,
+      "recovered": 9,
+      "correct": 9,
+      "rejected_candidates": 6,
+      "lost_bytes": 18,
+      "first_frame_offset": 0,
+      "bytes_scanned": 129,
+      "recovery": 0.9,
+      "loss": 0.1395
+    },
+    {
+      "scenario": "garbage prefix",
+      "expected": 10,
+      "recovered": 10,
+      "correct": 10,
+      "rejected_candidates": 0,
+      "lost_bytes": 17,
+      "first_frame_offset": 17,
+      "bytes_scanned": 141,
+      "recovery": 1.0,
+      "loss": 0.1206
+    }
+  ],
+  "window_study": {
+    "scenario": "line noise",
+    "baseline": {
+      "scenario": "line noise",
+      "expected": 10,
+      "recovered": 8,
+      "correct": 8,
+      "rejected_candidates": 2,
+      "lost_bytes": 25,
+      "first_frame_offset": 0,
+      "bytes_scanned": 124,
+      "recovery": 0.8,
+      "loss": 0.2016
+    },
+    "windows": [
+      {
+        "window": 8,
+        "recovered": 0,
+        "lost_bytes": 124,
+        "matches_full": false
+      },
+      {
+        "window": 16,
+        "recovered": 8,
+        "lost_bytes": 25,
+        "matches_full": true
+      },
+      {
+        "window": 32,
+        "recovered": 8,
+        "lost_bytes": 25,
+        "matches_full": true
+      },
+      {
+        "window": 64,
+        "recovered": 8,
+        "lost_bytes": 25,
+        "matches_full": true
+      },
+      {
+        "window": 128,
+        "recovered": 8,
+        "lost_bytes": 25,
+        "matches_full": true
+      },
+      {
+        "window": 256,
+        "recovered": 8,
+        "lost_bytes": 25,
+        "matches_full": true
+      }
+    ]
+  },
+  "max_frame_bytes": 15
+}
